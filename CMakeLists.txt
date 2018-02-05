@@ -7,6 +7,9 @@ target_include_directories(
     a PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>"
 )
 
+add_subdirectory(third_party/x)
+target_link_libraries(a PUBLIC x::x)
+
 # Installation (https://github.com/forexample/package-example) {
 
 set(config_install_dir "lib/cmake/${PROJECT_NAME}")
