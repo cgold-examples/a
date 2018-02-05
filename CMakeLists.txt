@@ -8,10 +8,7 @@ target_include_directories(
     a PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>"
 )
 
-if(NOT TARGET x::x)
-  add_subdirectory(third_party/x)
-endif()
-
+find_package(x CONFIG REQUIRED)
 target_link_libraries(a PUBLIC x::x)
 
 # Installation (https://github.com/forexample/package-example) {
